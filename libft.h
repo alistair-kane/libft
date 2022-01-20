@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alkane <alkane@student.42.fr>              +#+  +:+       +#+        */
+/*   By: alistair <alistair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 17:04:29 by alkane            #+#    #+#             */
-/*   Updated: 2021/12/11 19:00:32 by alkane           ###   ########.fr       */
+/*   Updated: 2022/01/20 20:14:50 by alistair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 4
+# endif
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -67,5 +71,7 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+char	*get_next_line(int fd);
 
 #endif
